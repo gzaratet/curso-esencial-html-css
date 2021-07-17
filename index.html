@@ -9,7 +9,7 @@
   <body>
     <header>
       <nav>
-        <details>
+        <details open>
           <summary>Setup</summary>
           <ol>
             <li>
@@ -188,5 +188,16 @@
       Si tienes alguna pregunta escríbeme a
       <a href="malito:gzaratet@gmail.com">gzaratet@gmail.com</a>
     </p>
+    <script>
+      const $detailsList = document.querySelectorAll('details');
+      $detailsList.forEach(($details) => {
+        $details.querySelector('summary').addEventListener('click', expand);
+      });
+      function expand() {
+        $detailsList.forEach(($details) => {
+          $details.removeAttribute('open');
+        });
+      }
+    </script>
   </body>
 </html>
